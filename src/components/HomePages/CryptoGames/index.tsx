@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import GameCard from "./GameCard";
 import SnakeGame from "@/components/HomePages/CryptoGames/SnakeGame";
 import FlappyBird from "@/components/HomePages/CryptoGames/flappyBird"; // Import the new game component
+import BrickBreaker from "@/components/HomePages/CryptoGames/brickbreaker"; // Import the new BrickBreaker game
 import SnakeThumb from "@/assets/snake-thumb.png";
 import FlappyThumb from "@/assets/flappythumb.png"; // Placeholder for Flappy Bird thumbnail
+import BrickThumb from "@/assets/giveCoinImage.png"; // Placeholder for BrickBreaker thumbnail
 
 const games = [
   {
@@ -18,6 +20,11 @@ const games = [
     title: "Flappy Coin",
     image: FlappyThumb, // You'll need to create this image
   },
+  {
+    id: "brickbreaker", // Add the new game to the games array
+    title: "BrickBreaker",
+    image: BrickThumb, // Add a thumbnail for BrickBreaker
+  },
 ];
 
 const CryptoGames: React.FC = () => {
@@ -27,8 +34,10 @@ const CryptoGames: React.FC = () => {
     switch (selectedGame) {
       case "snake":
         return <SnakeGame />;
-      case "flappy": // Add the new case for Flappy Bird
+      case "flappy":
         return <FlappyBird />;
+      case "brickbreaker": // Add the new case for BrickBreaker
+        return <BrickBreaker />;
       default:
         return null;
     }
