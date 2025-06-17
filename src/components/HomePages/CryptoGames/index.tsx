@@ -8,6 +8,9 @@ import BrickBreaker from "@/components/HomePages/CryptoGames/brickbreaker"; // I
 import SnakeThumb from "@/assets/snake-thumb.png";
 import FlappyThumb from "@/assets/flappythumb.png"; // Placeholder for Flappy Bird thumbnail
 import BrickThumb from "@/assets/giveCoinImage.png"; // Placeholder for BrickBreaker thumbnail
+import { title } from "process";
+import SpaceShooterGame from "./SpaceShooter";
+import CoinBombGame from "./CoinHunter";
 
 const games = [
   {
@@ -25,6 +28,16 @@ const games = [
     title: "BrickBreaker",
     image: BrickThumb, // Add a thumbnail for BrickBreaker
   },
+  {
+    id: "spaceshooter",
+    title: "SpaceShooter",
+    image: BrickThumb
+  },
+  {
+    id: "coinbombgame",
+    title: "CoinBombGame",
+    image: BrickThumb
+  }
 ];
 
 const CryptoGames: React.FC = () => {
@@ -38,6 +51,10 @@ const CryptoGames: React.FC = () => {
         return <FlappyBird />;
       case "brickbreaker": // Add the new case for BrickBreaker
         return <BrickBreaker />;
+      case "spaceshooter":
+        return <SpaceShooterGame />;
+      case "coinbombgame":
+        return <CoinBombGame />
       default:
         return null;
     }
