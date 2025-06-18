@@ -26,7 +26,7 @@ const Profile = () => {
       <CryptoGames />
 
       <div className="mt-20">
-        <BurnChartWithCalculator /> {/* This is your chart and calculator */}
+        {/* <BurnChartWithCalculator /> This is your chart and calculator */}
       </div>
       <Slider />
       <div className="mt-20">
