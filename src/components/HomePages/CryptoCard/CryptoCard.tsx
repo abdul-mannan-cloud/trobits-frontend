@@ -59,7 +59,7 @@ const TransparentCard: React.FC<TransparentCardProps> = ({
   }, [coin, index]);
 
   return (
-    <div className="bg-gray-900/80 border border-gray-800/50 backdrop-blur-xl rounded-3xl p-4 md:p-6 w-full max-w-[280px] min-h-[400px] text-white shadow-2xl hover:shadow-3xl transition-all duration-500 hover:border-gray-700/70 group mx-2">
+    <div className="bg-gray-900/80 border border-gray-800/50 backdrop-blur-xl rounded-3xl p-4 md:p-6 w-full max-w-[300px] min-h-[400px] text-white shadow-2xl hover:shadow-3xl transition-all duration-500 hover:border-gray-700/70 group mx-2">
       {/* TradingView Widget */}
       <div className="tradingview-widget-container mb-0 text-sm">
         <div
