@@ -23,7 +23,6 @@ const Profile = () => {
       <CryptoData />
 
       <CryptoInfo />
-      <CryptoGames />
 
       <div className="mt-20">
         {/* <BurnChartWithCalculator /> This is your chart and calculator */}

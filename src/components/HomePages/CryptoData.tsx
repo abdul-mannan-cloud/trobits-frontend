@@ -105,12 +105,12 @@ export default function CryptoData() {
   ];
 
   return (
-    <section className="container mx-auto mt-28 px-0">
-      <div className="flex justify-center flex-wrap items-center gap-10 perspective-1000">
+    <section className="w-full mt-28 px-0 mx-0">
+      <div className="flex flex-wrap justify-center items-start gap-2 px-0 mx-0">
         {cardData.map((card, index) => (
           <div
             key={index}
-            className={`relative transform-gpu transition-transform duration-500 ease-out `}
+            className="relative transform-gpu transition-transform duration-500 ease-out"
           >
             <TransparentCard cryptoData={card} index={index} />
           </div>

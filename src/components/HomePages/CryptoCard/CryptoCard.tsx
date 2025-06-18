@@ -38,7 +38,7 @@ const TransparentCard: React.FC<TransparentCardProps> = ({
     script.innerHTML = JSON.stringify({
       symbol:
         coin.toUpperCase() === "SHIB" ? "CRYPTO:SHIBUSD" : "CRYPTO:LUNCUSD",
-      width: 401,
+      width: "100%",
       height: 50,
       isTransparent: true,
       colorTheme: "dark",
@@ -59,7 +59,7 @@ const TransparentCard: React.FC<TransparentCardProps> = ({
   }, [coin, index]);
 
   return (
-    <div className="bg-gray-900/80 border border-gray-800/50 backdrop-blur-xl rounded-3xl p-6 md:p-8 max-w-[320px] md:max-w-[500px] md:w-[450px] min-h-[400px] text-white shadow-2xl hover:shadow-3xl transition-all duration-500 hover:border-gray-700/70 group">
+    <div className="bg-gray-900/80 border border-gray-800/50 backdrop-blur-xl rounded-3xl p-4 md:p-6 w-full max-w-[280px] min-h-[400px] text-white shadow-2xl hover:shadow-3xl transition-all duration-500 hover:border-gray-700/70 group mx-2">
       {/* TradingView Widget */}
       <div className="tradingview-widget-container mb-0 text-sm">
         <div
@@ -70,23 +70,6 @@ const TransparentCard: React.FC<TransparentCardProps> = ({
 
       {/* Header with coin info */}
       <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center gap-4">
-          <div className="relative">
-            <div className="absolute inset-0 bg-white/10 rounded-full blur-xl group-hover:bg-white/20 transition-all duration-500" />
-            {/* <Image
-              src={icon}
-              alt={`${coin} logo`}
-              width={50}
-              height={50}
-              className="relative rounded-full border border-gray-700 group-hover:border-gray-600 transition-all duration-300"
-            /> */}
-          </div>
-          <div>
-            <h3 className="text-xl font-bold text-white">{coin}</h3>
-            <p className="text-sm text-gray-400">Cryptocurrency</p>
-          </div>
-        </div>
-
         {/* Live indicator */}
         <div className="flex items-center gap-2 bg-green-600/20 border border-green-500/30 rounded-full px-3 py-1">
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -95,29 +78,29 @@ const TransparentCard: React.FC<TransparentCardProps> = ({
       </div>
 
       {/* Revenue Cards (1 Day + Lifetime) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-        {[
-          { label: "1 Day Revenue", value: `$${formatNumber(revenue)}` },
-          {
-            label: "Lifetime Revenue",
-            value: `$${formatNumber(revenue30Day)}`,
-          },
-        ].map(({ label, value }, idx) => (
-          <div
-            key={idx}
-            className="bg-black/30 border border-gray-800/30 rounded-2xl p-4 flex items-center justify-between"
-          >
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center">
-                <TrendingUp className="w-6 h-6 text-green-400" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-400">{label}</p>
-                <p className="text-xl font-bold text-white">{value}</p>
-              </div>
-            </div>
+      <div className="bg-black/30 border border-gray-800/30 rounded-2xl p-4 mb-6">
+        <div className="flex items-center gap-4 mb-4">
+          <div className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center">
+            <TrendingUp className="w-6 h-6 text-green-400" />
           </div>
-        ))}
+          <div>
+            <p className="text-sm text-gray-400">1 Day Revenue</p>
+            <p className="text-xl font-bold text-white">
+              ${formatNumber(revenue)}
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center">
+            <TrendingUp className="w-6 h-6 text-green-400" />
+          </div>
+          <div>
+            <p className="text-sm text-gray-400">Lifetime Revenue</p>
+            <p className="text-xl font-bold text-white">
+              ${formatNumber(revenue30Day)}
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Action Buttons */}
